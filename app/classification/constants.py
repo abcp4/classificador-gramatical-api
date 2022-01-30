@@ -1,0 +1,23 @@
+COLORS_DICT = {
+    "SUBSTANTIVO": "#fd2c2c",
+    "NOME#PRÓPRIO": "#fd2c2c",
+    "VERBO": "#6aa84f",
+    "AUXILIAR": "#6aa84f",
+    "VERBO#LIGAÇÃO": "#6aa84f",
+    "VERBO#PRONOME": "#6aa84f",
+    "VERBO#PRONOME#DESINENCIA": "#6aa84f",
+    "ADJETIVO": "#0000ff",
+    "ARTIGO": "#ff9900",
+    "PRONOME": "#b77a7a",
+    "NUMERAL": "#ef8ccd",
+    "ADVÉRBIO": "#9900ff",
+    "PREPOSIÇÃO": "#999999",
+    "PREPOSIÇÃO#PRONOME": "#999999",
+    "PREPOSIÇÃO#ARTIGO": "#999999",
+    "PREPOSIÇÃO#ADVÉRBIO": "#999999",
+    "CONJUNÇÃO": "#c9c9c9",
+    "OUTROS": "#000000",
+    "SIMB": "black",
+    "INTERJEIÇÃO": "#000000",
+    "PONTUAÇÃO": "black"
+}
