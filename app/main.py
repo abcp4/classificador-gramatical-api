@@ -10,16 +10,16 @@ from annotated_text import annotated_text
 # st.sidebar.markdown("Você pode escolher um das anotações abaixo:")
 # tagset = st.sidebar.selectbox("Qual você prefere?", ("Bosque", "GSD", "Linguateca", "Macmorpho"))
 
-st.sidebar.markdown("## 🙏 Pedido:")
-st.sidebar.markdown((
-    "Enquanto nosso programa roda sua frase: "
-    "você pode clicar no botão **Recado**, temos uma mensagem para você!"
-    )
-)
+# st.sidebar.markdown("## 🙏 Pedido:")
+# st.sidebar.markdown((
+#     "Enquanto nosso programa roda sua frase: "
+#     "você pode clicar no botão **Recado**, temos uma mensagem para você!"
+#     )
+# )
 
-message = st.sidebar.button("Recado")
-if message:
-    st.sidebar.info(get_tip())
+# message = st.sidebar.button("Recado")
+# if message:
+#     st.sidebar.info(get_tip())
 
 #===========================================#
 #                 Main                      #
@@ -27,6 +27,7 @@ if message:
 
 desc = "Classificador gramatical para fins didáticos. Tenha acesso ao código [aqui](https://github.com/classificador-gramatical/classificador-gramatical)!"
 
+st.info(get_tip())
 st.title("Classificador Gramatical")
 st.write(desc)
 user_input = st.text_input("Informe o seu texto aqui:")

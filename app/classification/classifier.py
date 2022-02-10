@@ -1,7 +1,7 @@
 import spacy
 import re
 
-from .constants import COLORS_DICT
+from .constants import BK_COLOR_DICT, COLOR_DICT
 from .constants import tag_redirect 
 from .substituicoes import substituicoes
 
@@ -42,11 +42,13 @@ def get_classification(text, tagset=None):
         annotated_words = annotated_text.strip().split(" ")
         tagged_words = []
         for word, tag in [w.split("/") for w in annotated_words]:
-            if tag in COLORS_DICT:
-                tagged_words.append((word, tag, COLORS_DICT[tag])) 
+            if tag in BK_COLOR_DICT:
+                tagged_words.append((word, tag, BK_COLOR_DICT[tag], COLOR_DICT[tag])) 
             else:
                 if tag in tag_redirect:
                     tag = tag_redirect[tag]
-                    tagged_words.append((word, tag, COLORS_DICT[tag])) 
-                a=2/0
+                    tagged_words.append((word, tag, BK_COLOR_DICT[tag], COLOR_DICT[tag])) 
+                else:
+                    tagged_words.append(word)
+            tagged_words.append(" ")
         return tagged_words      

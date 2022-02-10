@@ -1,4 +1,4 @@
-COLORS_DICT = {
+BK_COLOR_DICT = {
     "SUBSTANTIVO": "#fd2c2c",
     "AUXILIAR": "#6aa84f",
     "NOME#PRÓPRIO": "#fd2c2c",
@@ -43,3 +43,6 @@ COLORS_DICT = {
 tag_redirect = {
     "VERBO:relcl":"VERBO",
 }
+
+
+COLOR_DICT = {key: "white" for key in BK_COLOR_DICT}
