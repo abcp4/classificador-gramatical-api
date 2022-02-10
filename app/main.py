@@ -1,6 +1,6 @@
 import streamlit as st
 from tips import get_tip
-from classification import get_classification
+from classification.classifier import get_classification
 from annotated_text import annotated_text
 
 #===========================================#
@@ -37,5 +37,6 @@ def split_given_size(a, size):
 
 if st.button("Verificar") or user_input:
     tagged_words = get_classification(user_input)
+    print('tags: ',tagged_words)
     if tagged_words:
         annotated_text(*tagged_words)

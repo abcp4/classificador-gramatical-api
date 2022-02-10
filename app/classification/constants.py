@@ -1,5 +1,6 @@
 COLORS_DICT = {
     "SUBSTANTIVO": "#fd2c2c",
+    "AUXILIAR": "#6aa84f",
     "NOME#PRÓPRIO": "#fd2c2c",
     "VERBO": "#6aa84f",
     "VERBO#AUXILIAR": "#6aa84f",
@@ -11,7 +12,7 @@ COLORS_DICT = {
     "VERBO#PARTICÍPIO": "#6aa84f",
     "VERBO#GERÚNDIO": "#6aa84f",
     "ADJETIVO": "#0000ff",
-    "ARTIGO": "#ff9900",
+    "ARTIGO": "#afa",
     "PRONOME": "#b77a7a",
     "PRONOME#ADJETIVO": "#b77a7a",
     "PRONOME#SUBSTANTIVO": "#b77a7a",
@@ -32,10 +33,13 @@ COLORS_DICT = {
     "CONJUNÇÃO#COORDENATIVA": "#c9c9c9",
     "CONJUNÇÃO#SUBORDINATIVA": "#c9c9c9",
     "OUTROS": "#000000",
-    "SIMB": "black",
+    "SIMB": "white",
     "INTERJEIÇÃO": "#000000",
-    "PONTUAÇÃO": "black",
-    "PARTICÍPIO": "black",
-    "PALAVRA#DENOTATIVA": "black",
-    "MOEDA": "black",
+    "PONTUAÇÃO": "white",
+    "PARTICÍPIO": "white",
+    "PALAVRA#DENOTATIVA": "white",
+    "MOEDA": "white",
+}
+tag_redirect = {
+    "VERBO:relcl":"VERBO",
 }
