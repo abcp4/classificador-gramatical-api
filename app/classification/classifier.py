@@ -4,6 +4,7 @@ import re
 from .constants import BK_COLOR_DICT, COLOR_DICT
 from .constants import tag_redirect 
 from .substituicoes import substituicoes
+from .morph import get_morph
 
 def a_classificacao(texto):
 
@@ -29,14 +30,19 @@ def a_classificacao(texto):
     for k,v in substituicoes.items():
         frase_spacy_str = re.sub(v[0], v[1], frase_spacy_str)
     frase_classgram = re.sub(r'(?i)((\b\w+|[,.;?!])/\w+\b)/\w+', r'\1', frase_spacy_str)
+    
+    # Processar informações morfologicas
+    frase_spacy_str = ''.join(str(e[0] + '/' + str(e[2]) + ' ') for e in frase_spacy)
+    frase_morph=get_morph(frase_spacy_str)
 
-    return frase_classgram
+
+    return frase_classgram,frase_morph
 
 
 
 def get_classification(text, tagset=None):
     text = re.sub("\s+", " ", text)
-    annotated_text = a_classificacao(text)
+    annotated_text,frase_morph = a_classificacao(text)
     if annotated_text:
         print('annotated words: ',annotated_text)
         annotated_words = annotated_text.strip().split(" ")
