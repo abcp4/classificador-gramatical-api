@@ -43,5 +43,5 @@ def get_morph(frase_spacy_str):
               new_terms.append((sub_terms[0],sub_terms[1]))
           frase_morph.append(new_terms)
       else:
-          frase_morph.append('Desconhecido')
-      return frase_morph
+          frase_morph.append([('--', '--')])
+    return frase_morph

@@ -35,7 +35,6 @@ def a_classificacao(texto):
     frase_spacy_str = ''.join(str(e[0] + '/' + str(e[2]) + ' ') for e in frase_spacy)
     frase_morph=get_morph(frase_spacy_str)
 
-
     return frase_classgram,frase_morph
 
 
@@ -47,6 +46,7 @@ def get_classification(text, tagset=None):
         print('annotated words: ',annotated_text)
         annotated_words = annotated_text.strip().split(" ")
         tagged_words = []
+        tokens = []
         for word, tag in [w.split("/") for w in annotated_words]:
             if tag in BK_COLOR_DICT:
                 tagged_words.append((word, tag, BK_COLOR_DICT[tag], COLOR_DICT[tag])) 
@@ -56,5 +56,6 @@ def get_classification(text, tagset=None):
                     tagged_words.append((word, tag, BK_COLOR_DICT[tag], COLOR_DICT[tag])) 
                 else:
                     tagged_words.append(word)
+            tokens.append(word)
             tagged_words.append(" ")
-        return tagged_words      
+        return tagged_words, frase_morph, tokens 
