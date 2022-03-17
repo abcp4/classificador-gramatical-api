@@ -45,5 +45,3 @@ messages = [
 
 def get_tip():
     return random.choice(messages)
-
-print(get_tip())
