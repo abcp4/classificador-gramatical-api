@@ -1,3 +1,5 @@
 spacy==3.2.1
 st_annotated_text==3.0.0
 streamlit==1.5.0
+fastapi==0.75.1
+uvicorn[standard]==0.17.6

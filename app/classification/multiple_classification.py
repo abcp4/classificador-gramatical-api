@@ -1,10 +1,5 @@
 from math import sqrt
 import re
-import datetime
-import random
-import sys
-
-import numpy as np
 
 import torch
 
@@ -20,6 +15,10 @@ from .models.ModelPOSTagger import POSTagger
 
 #from .substitution import substituicoes
 from .substituicoes import substituicoes
+
+import os 
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 torch.set_printoptions(threshold=10000)
 
@@ -56,7 +55,7 @@ send_output(str(pos_model), 1)
 
 # Loading the model with best loss on the validation
 # try:
-pos_model.load_state_dict(torch.load('/home/ubuntu/classificador-gramatical-st/app/classification/model.pt', map_location=device))
+pos_model.load_state_dict(torch.load(os.path.join(dir_path, 'model.pt'), map_location=device))
 
 
 def predict(s,dataset_id):
