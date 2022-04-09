@@ -1,0 +1,306 @@
+2022-02-21 14:04:43.591 Trying to detect encoding from a tiny portion of (16) byte(s).
+2022-02-21 14:04:43.592 ascii passed initial chaos probing. Mean measured chaos is 0.000000 %
+2022-02-21 14:04:43.593 ascii is most likely the one. Stopping the process.
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://10.0.0.172:5000
+  External URL: http://140.238.181.222:5000
+
+
+>> Initializing Macmorpho dataset
+>>> Started loading dataset
+<<< Finished loading dataset
+>>> Started parsing data from dataset
+<<< Finished parsing data from dataset
+>>> Started building tag dict for dataset
+<<< Finished building tag dict for dataset
+<< Finished initializing Macmorpho dataset
+
+>> Initializing Bosque dataset
+>>> Started loading dataset
+<<< Finished loading dataset
+>>> Started parsing data from dataset
+<<< Finished parsing data from dataset
+>>> Started building tag dict for dataset
+<<< Finished building tag dict for dataset
+<< Finished initializing Bosque dataset
+
+>> Initializing GSD dataset
+>>> Started loading dataset
+<<< Finished loading dataset
+>>> Started parsing data from dataset
+<<< Finished parsing data from dataset
+>>> Started building tag dict for dataset
+<<< Finished building tag dict for dataset
+<< Finished initializing GSD dataset
+
+>> Initializing Linguateca dataset
+>>> Started loading dataset
+<<< Finished loading dataset
+>>> Started parsing data from dataset
+<<< Finished parsing data from dataset
+>>> Started building tag dict for dataset
+<<< Finished building tag dict for dataset
+<< Finished initializing Linguateca dataset
+
+>> Building char dict...
+>>> Started extracting chars from Macmorpho dataset
+<<< Finished extracting chars from Macmorpho dataset
+>>> Started extracting chars from Bosque dataset
+<<< Finished extracting chars from Bosque dataset
+>>> Started extracting chars from GSD dataset
+<<< Finished extracting chars from GSD dataset
+>>> Started extracting chars from Linguateca dataset
+<<< Finished extracting chars from Linguateca dataset
+<< Finished building dicts!
+
+>> Started preparing Macmorpho dataset
+<< Finished preparing Macmorpho dataset
+
+>> Started preparing Bosque dataset
+<< Finished preparing Bosque dataset
+
+>> Started preparing GSD dataset
+<< Finished preparing GSD dataset
+
+>> Started preparing Linguateca dataset
+<< Finished preparing Linguateca dataset
+=================================================================
+Macmorpho Dataset
+Train dataset #sents: 37948 #words: 728497
+Val dataset #sents: 1997 #words: 38881
+Test dataset #sents: 9987 #words: 178373
+Tag set: [BOS, EOS, ADJ, ADV, ADV-KS, ART, CUR, IN, KC, KS, N, NPROP, NUM, PCP, PDEN, PREP, PREP+ADV, PREP+ART, PREP+PRO-KS, PREP+PROADJ, PREP+PROPESS, PREP+PROSUB, PRO-KS, PROADJ, PROPESS, PROSUB, PU, V]
+=================================================================
+
+=================================================================
+Bosque Dataset
+Train dataset #sents: 8328 #words: 206744
+Val dataset #sents: 560 #words: 10851
+Test dataset #sents: 477 #words: 10199
+Tag set: [BOS, EOS, ADJ, ADP, ADV, AUX, CCONJ, DET, INTJ, NOUN, NUM, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB, X]
+=================================================================
+
+=================================================================
+GSD Dataset
+Train dataset #sents: 9664 #words: 255755
+Val dataset #sents: 1210 #words: 32129
+Test dataset #sents: 1204 #words: 31496
+Tag set: [BOS, EOS, ADJ, ADP, ADV, AUX, CCONJ, DET, NOUN, NUM, PART, PRON, PROPN, PUNCT, SYM, VERB, X]
+=================================================================
+
+=================================================================
+Linguateca Dataset
+Train dataset #sents: 3355 #words: 64832
+Val dataset #sents: 419 #words: 7291
+Test dataset #sents: 420 #words: 8187
+Tag set: [BOS, EOS, adj, adv, art, conj-c, conj-s, ec, intj, n, n-adj, n:, np, num, pp, pron-det, pron-indp, pron-pers, prop, prp, punct, v-fin, v-ger, v-inf, v-pcp, vp]
+=================================================================
+
+POSTagger(
+  (charBILSTM): CharBILSTM(
+    (char_embeddings_table): Embedding(197, 70, padding_idx=0)
+    (bilstm): LSTM(70, 350, batch_first=True, bidirectional=True)
+    (projection_layer): Linear(in_features=700, out_features=350, bias=True)
+    (dropout): Dropout(p=0.1, inplace=False)
+  )
+  (wordBILSTM1): WordBILSTM(
+    (bilstm): LSTM(350, 350, batch_first=True, bidirectional=True)
+    (projection_layer): Linear(in_features=700, out_features=350, bias=True)
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (wordBILSTM2): WordBILSTM(
+    (bilstm): LSTM(350, 350, batch_first=True, bidirectional=True)
+    (projection_layer): Linear(in_features=700, out_features=350, bias=True)
+    (dropout): Dropout(p=0.2, inplace=False)
+  )
+  (tag_bilstm): LSTM(350, 200, batch_first=True, bidirectional=True)
+  (classifiers): ModuleList(
+    (0): Linear(in_features=400, out_features=28, bias=True)
+    (1): Linear(in_features=400, out_features=19, bias=True)
+    (2): Linear(in_features=400, out_features=17, bias=True)
+    (3): Linear(in_features=400, out_features=26, bias=True)
+  )
+  (dropout): Dropout(p=0.4, inplace=False)
+)
+outras anotacoes
+prop
+v-fin
+pron-det
+prop
+pron-det
+art
+n
+pron-det
+n
+adv
+adv
+n
+adv
+prp
+n
+prp
+n
+pron-det
+pron-det
+pron-det
+v-fin
+pron-det
+n
+prp
+n
+Vive-se/VERBO#PRONOME bem/v-fin no/PREPOSIÇÃO#ARTIGO Brasil,/prop mas/pron-det na/PREPOSIÇÃO#ARTIGO França/n as/pron-det pessoas/n vivem/adv melhor./adv Morre-se/VERBO#PRONOME muito/adv de/PREPOSIÇÃO doenças/n do/PREPOSIÇÃO#ARTIGO coração,/n mas/pron-det mais/pron-det gente/pron-det morre/v-fin em/pron-det acidentes/n de/PREPOSIÇÃO carro./n
+annotated words:  Vive-se/VERBO#PRONOME bem/v-fin no/PREPOSIÇÃO#ARTIGO Brasil,/prop mas/pron-det na/PREPOSIÇÃO#ARTIGO França/n as/pron-det pessoas/n vivem/adv melhor./adv Morre-se/VERBO#PRONOME muito/adv de/PREPOSIÇÃO doenças/n do/PREPOSIÇÃO#ARTIGO coração,/n mas/pron-det mais/pron-det gente/pron-det morre/v-fin em/pron-det acidentes/n de/PREPOSIÇÃO carro./n
+tags:  [('Vive-se', 'VERBO#PRONOME', '#6aa84f', 'white'), ' ', ('bem', 'VERBO#FINITO', '#6aa84f', 'white'), ' ', ('no', 'PREPOSIÇÃO#ARTIGO', '#999999', 'white'), ' ', ('Brasil,', 'NOME#PRÓPRIO', '#fd2c2c', 'white'), ' ', ('mas', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ', ('na', 'PREPOSIÇÃO#ARTIGO', '#999999', 'white'), ' ', ('França', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('as', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ', ('pessoas', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('vivem', 'ADVÉRBIO', '#9900ff', 'white'), ' ', ('melhor.', 'ADVÉRBIO', '#9900ff', 'white'), ' ', ('Morre-se', 'VERBO#PRONOME', '#6aa84f', 'white'), ' ', ('muito', 'ADVÉRBIO', '#9900ff', 'white'), ' ', ('de', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('doenças', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('do', 'PREPOSIÇÃO#ARTIGO', '#999999', 'white'), ' ', ('coração,', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('mas', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ', ('mais', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ', ('gente', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ', ('morre', 'VERBO#FINITO', '#6aa84f', 'white'), ' ', ('em', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ', ('acidentes', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('de', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('carro.', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ']
+outras anotacoes
+art
+adj
+n
+prp
+n
+pron-det
+n
+A/ARTIGO noiva/adj casa/n de/PREPOSIÇÃO branco/n na/PREPOSIÇÃO#ARTIGO igreja./n
+annotated words:  A/ARTIGO noiva/adj casa/n de/PREPOSIÇÃO branco/n na/PREPOSIÇÃO#ARTIGO igreja./n
+tags:  [('A', 'ARTIGO', '#5B850C', 'white'), ' ', ('noiva', 'ADJETIVO', '#0000ff', 'white'), ' ', ('casa', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('de', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('branco', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('na', 'PREPOSIÇÃO#ARTIGO', '#999999', 'white'), ' ', ('igreja.', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ']
+outras anotacoes
+prp
+pron-det
+n
+prp
+n
+pron-det
+n
+A/prp noiva/pron-det casa/n de/PREPOSIÇÃO branco/n na/PREPOSIÇÃO#ARTIGO igreja./n
+annotated words:  A/prp noiva/pron-det casa/n de/PREPOSIÇÃO branco/n na/PREPOSIÇÃO#ARTIGO igreja./n
+tags:  [('A', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('noiva', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ', ('casa', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('de', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('branco', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('na', 'PREPOSIÇÃO#ARTIGO', '#999999', 'white'), ' ', ('igreja.', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ']
+outras anotacoes
+NPROP
+PROADJ
+N
+PREP
+N
+PROADJ
+N
+A/ARTIGO noiva/PROADJETIVO casa/N de/PREPOSIÇÃO branco/N na/PREPOSIÇÃO#ARTIGO igreja./N
+annotated words:  A/ARTIGO noiva/PROADJETIVO casa/N de/PREPOSIÇÃO branco/N na/PREPOSIÇÃO#ARTIGO igreja./N
+tags:  [('A', 'ARTIGO', '#5B850C', 'white'), ' ', ('noiva', 'PRONOME#ADJETIVO', '#b77a7a', 'white'), ' ', ('casa', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('de', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('branco', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('na', 'PREPOSIÇÃO#ARTIGO', '#999999', 'white'), ' ', ('igreja.', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ']
+outras anotacoes
+PROPN
+ADJ
+NOUN
+ADP
+NOUN
+DET
+NOUN
+A/NOME#PRÓPRIO noiva/ADJETIVO casa/SUBSTANTIVO de/PREPOSIÇÃO branco/SUBSTANTIVO na/PREPOSIÇÃO#ARTIGO igreja./SUBSTANTIVO
+annotated words:  A/NOME#PRÓPRIO noiva/ADJETIVO casa/SUBSTANTIVO de/PREPOSIÇÃO branco/SUBSTANTIVO na/PREPOSIÇÃO#ARTIGO igreja./SUBSTANTIVO
+tags:  [('A', 'NOME#PRÓPRIO', '#fd2c2c', 'white'), ' ', ('noiva', 'ADJETIVO', '#0000ff', 'white'), ' ', ('casa', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('de', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('branco', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('na', 'PREPOSIÇÃO#ARTIGO', '#999999', 'white'), ' ', ('igreja.', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ']
+outras anotacoes
+DET
+ADJ
+NOUN
+ADP
+NOUN
+DET
+NOUN
+A/ARTIGO noiva/ADJETIVO casa/SUBSTANTIVO de/PREPOSIÇÃO branco/SUBSTANTIVO na/PREPOSIÇÃO#ARTIGO igreja./SUBSTANTIVO
+annotated words:  A/ARTIGO noiva/ADJETIVO casa/SUBSTANTIVO de/PREPOSIÇÃO branco/SUBSTANTIVO na/PREPOSIÇÃO#ARTIGO igreja./SUBSTANTIVO
+tags:  [('A', 'ARTIGO', '#5B850C', 'white'), ' ', ('noiva', 'ADJETIVO', '#0000ff', 'white'), ' ', ('casa', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('de', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('branco', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('na', 'PREPOSIÇÃO#ARTIGO', '#999999', 'white'), ' ', ('igreja.', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ']
+spacy
+frase spacy:  a/DET/det noiva/NOUN/nsubj casa/NOUN/ROOT de/ADP/case branco/NOUN/nmod na/ADP/case igreja/NOUN/nmod ./PUNCT/punct 
+annotated words:  a/ARTIGO noiva/SUBSTANTIVO casa/VERBO de/PREPOSIÇÃO branco/SUBSTANTIVO na/PREPOSIÇÃO#ARTIGO igreja/SUBSTANTIVO ./PONTUAÇÃO 
+tags:  [('a', 'ARTIGO', '#5B850C', 'white'), ' ', ('noiva', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('casa', 'VERBO', '#6aa84f', 'white'), ' ', ('de', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('branco', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('na', 'PREPOSIÇÃO#ARTIGO', '#999999', 'white'), ' ', ('igreja', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('.', 'PONTUAÇÃO', 'black', 'white'), ' ']
+spacy
+frase spacy:  ele/PRON/nsubj falou/VERB/ROOT comigo/PRON/obj sobre/ADP/case a/DET/det casa/NOUN/obl ./PUNCT/punct 
+annotated words:  ele/PRONOME falou/VERBO comigo/PRONOME sobre/PREPOSIÇÃO a/ARTIGO casa/SUBSTANTIVO ./PONTUAÇÃO 
+tags:  [('ele', 'PRONOME', '#b77a7a', 'white'), ' ', ('falou', 'VERBO', '#6aa84f', 'white'), ' ', ('comigo', 'PRONOME', '#b77a7a', 'white'), ' ', ('sobre', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('a', 'ARTIGO', '#5B850C', 'white'), ' ', ('casa', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('.', 'PONTUAÇÃO', 'black', 'white'), ' ']
+spacy
+frase spacy:  ele/PRON/nsubj falou/VERB/ROOT comigo/PRON/obj sobre/ADP/case a/DET/det casa/NOUN/obl ./PUNCT/punct 
+annotated words:  ele/PRONOME falou/VERBO comigo/PRONOME sobre/PREPOSIÇÃO a/ARTIGO casa/SUBSTANTIVO ./PONTUAÇÃO 
+tags:  [('ele', 'PRONOME', '#b77a7a', 'white'), ' ', ('falou', 'VERBO', '#6aa84f', 'white'), ' ', ('comigo', 'PRONOME', '#b77a7a', 'white'), ' ', ('sobre', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('a', 'ARTIGO', '#5B850C', 'white'), ' ', ('casa', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('.', 'PONTUAÇÃO', 'black', 'white'), ' ']
+outras anotacoes
+pron-pers
+v-fin
+adv
+prp
+art
+pron-det
+Ele/pron-pers falou/v-fin comigo/PRONOME sobre/prp a/ARTIGO casa./pron-det
+annotated words:  Ele/pron-pers falou/v-fin comigo/PRONOME sobre/prp a/ARTIGO casa./pron-det
+tags:  [('Ele', 'PRONOME#PESSOAL', '#b77a7a', 'white'), ' ', ('falou', 'VERBO#FINITO', '#6aa84f', 'white'), ' ', ('comigo', 'PRONOME', '#b77a7a', 'white'), ' ', ('sobre', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('a', 'ARTIGO', '#5B850C', 'white'), ' ', ('casa.', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ']
+outras anotacoes
+PROPESS
+V
+PROSUB
+PREP
+ART
+N
+Ele/PROPESS falou/V comigo/PRONOME sobre/PREP a/ARTIGO casa./N
+annotated words:  Ele/PROPESS falou/V comigo/PRONOME sobre/PREP a/ARTIGO casa./N
+tags:  [('Ele', 'PRONOME#PESSOAL', '#b77a7a', 'white'), ' ', ('falou', 'VERBO', '#6aa84f', 'white'), ' ', ('comigo', 'PRONOME', '#b77a7a', 'white'), ' ', ('sobre', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('a', 'ARTIGO', '#5B850C', 'white'), ' ', ('casa.', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ']
+spacy
+frase spacy:  ele/PRON/nsubj falou/VERB/ROOT comigo/PRON/obj sobre/ADP/case a/DET/det casa/NOUN/obl ./PUNCT/punct 
+annotated words:  ele/PRONOME falou/VERBO comigo/PRONOME sobre/PREPOSIÇÃO a/ARTIGO casa/SUBSTANTIVO ./PONTUAÇÃO 
+tags:  [('ele', 'PRONOME', '#b77a7a', 'white'), ' ', ('falou', 'VERBO', '#6aa84f', 'white'), ' ', ('comigo', 'PRONOME', '#b77a7a', 'white'), ' ', ('sobre', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('a', 'ARTIGO', '#5B850C', 'white'), ' ', ('casa', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ', ('.', 'PONTUAÇÃO', 'black', 'white'), ' ']
+outras anotacoes
+pron-pers
+v-fin
+pron-indp
+prp
+art
+n
+Ele/pron-pers falou/v-fin comigo/PRONOME sobre/prp a/ARTIGO casa./n
+annotated words:  Ele/pron-pers falou/v-fin comigo/PRONOME sobre/prp a/ARTIGO casa./n
+tags:  [('Ele', 'PRONOME#PESSOAL', '#b77a7a', 'white'), ' ', ('falou', 'VERBO#FINITO', '#6aa84f', 'white'), ' ', ('comigo', 'PRONOME', '#b77a7a', 'white'), ' ', ('sobre', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('a', 'ARTIGO', '#5B850C', 'white'), ' ', ('casa.', 'SUBSTANTIVO', '#fd2c2c', 'white'), ' ']
+outras anotacoes
+adv
+v-fin
+pron-det
+Vive-se/VERBO#PRONOME bem/v-fin aqui./pron-det
+annotated words:  Vive-se/VERBO#PRONOME bem/v-fin aqui./pron-det
+tags:  [('Vive-se', 'VERBO#PRONOME', '#6aa84f', 'white'), ' ', ('bem', 'VERBO#FINITO', '#6aa84f', 'white'), ' ', ('aqui.', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ']
+outras anotacoes
+adv
+prp
+pron-det
+Vive-se/VERBO#PRONOME bem/prp aqui./pron-det
+annotated words:  Vive-se/VERBO#PRONOME bem/prp aqui./pron-det
+tags:  [('Vive-se', 'VERBO#PRONOME', '#6aa84f', 'white'), ' ', ('bem', 'PREPOSIÇÃO', '#999999', 'white'), ' ', ('aqui.', 'PRONOME#DETERMINATIVO', '#b77a7a', 'white'), ' ']
+outras anotacoes
+NPROP
+ADV
+PROADJ
+Vive-se/VERBO#PRONOME bem/ADVÉRBIO aqui./PROADJETIVO
+annotated words:  Vive-se/VERBO#PRONOME bem/ADVÉRBIO aqui./PROADJETIVO
+tags:  [('Vive-se', 'VERBO#PRONOME', '#6aa84f', 'white'), ' ', ('bem', 'ADVÉRBIO', '#9900ff', 'white'), ' ', ('aqui.', 'PRONOME#ADJETIVO', '#b77a7a', 'white'), ' ']
+outras anotacoes
+PROPN
+ADV
+DET
+Vive-se/VERBO#PRONOME bem/ADVÉRBIO aqui./ARTIGO
+annotated words:  Vive-se/VERBO#PRONOME bem/ADVÉRBIO aqui./ARTIGO
+tags:  [('Vive-se', 'VERBO#PRONOME', '#6aa84f', 'white'), ' ', ('bem', 'ADVÉRBIO', '#9900ff', 'white'), ' ', ('aqui.', 'ARTIGO', '#5B850C', 'white'), ' ']
+outras anotacoes
+ADV
+ADV
+PRON
+Vive-se/VERBO#PRONOME bem/ADVÉRBIO aqui./PRONOME
+annotated words:  Vive-se/VERBO#PRONOME bem/ADVÉRBIO aqui./PRONOME
+tags:  [('Vive-se', 'VERBO#PRONOME', '#6aa84f', 'white'), ' ', ('bem', 'ADVÉRBIO', '#9900ff', 'white'), ' ', ('aqui.', 'PRONOME', '#b77a7a', 'white'), ' ']
+outras anotacoes
+VERB
+ADV
+PRON
+Vive-se/VERBO#PRONOME bem/ADVÉRBIO aqui./PRONOME
+annotated words:  Vive-se/VERBO#PRONOME bem/ADVÉRBIO aqui./PRONOME
+tags:  [('Vive-se', 'VERBO#PRONOME', '#6aa84f', 'white'), ' ', ('bem', 'ADVÉRBIO', '#9900ff', 'white'), ' ', ('aqui.', 'PRONOME', '#b77a7a', 'white'), ' ']
+spacy
+frase spacy:  vive-se/VERB/ROOT bem/ADV/advmod aqui/ADV/advmod ./PUNCT/punct 
+annotated words:  vive-se/VERBO#PRONOME bem/ADVÉRBIO aqui/ADVÉRBIO ./PONTUAÇÃO 
+tags:  [('vive-se', 'VERBO#PRONOME', '#6aa84f', 'white'), ' ', ('bem', 'ADVÉRBIO', '#9900ff', 'white'), ' ', ('aqui', 'ADVÉRBIO', '#9900ff', 'white'), ' ', ('.', 'PONTUAÇÃO', 'black', 'white'), ' ']
+outras anotacoes
+prop
+adv
+pron-det

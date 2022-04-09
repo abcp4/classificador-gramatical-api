@@ -6,9 +6,10 @@ from annotated_text import annotated_text
 #===========================================#
 #                 SideBar                   #
 #===========================================#
-# st.sidebar.title("📖 Classificador gramatical")
-# st.sidebar.markdown("Você pode escolher um das anotações abaixo:")
-# tagset = st.sidebar.selectbox("Qual você prefere?", ("Bosque", "GSD", "Linguateca", "Macmorpho"))
+st.sidebar.title("📖 Classificador gramatical")
+st.sidebar.markdown("Você pode escolher um das anotações abaixo:")
+
+tagset = st.sidebar.selectbox("Qual você prefere?", ("Spacy","Bosque", "GSD", "Linguateca", "Macmorpho"))
 
 # st.sidebar.markdown("## 🙏 Pedido:")
 # st.sidebar.markdown((
@@ -37,7 +38,7 @@ def split_given_size(a, size):
     return [a[i:i+size] for i in range(0,len(a),size)]
 
 if st.button("Verificar") or user_input:
-    tagged_words = get_classification(user_input)
+    tagged_words = get_classification(user_input,tagset)
     print('tags: ',tagged_words)
     if tagged_words:
         annotated_text(*tagged_words)
