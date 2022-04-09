@@ -2,6 +2,7 @@ import streamlit as st
 from tips import get_tip
 from classification.classifier import get_classification
 from annotated_text import annotated_text
+import pandas as pd
 
 #===========================================#
 #                 SideBar                   #
@@ -38,7 +39,14 @@ def split_given_size(a, size):
     return [a[i:i+size] for i in range(0,len(a),size)]
 
 if st.button("Verificar") or user_input:
-    tagged_words = get_classification(user_input,tagset)
+    tagged_words, frase_morph, tokens = get_classification(user_input)
     print('tags: ',tagged_words)
     if tagged_words:
         annotated_text(*tagged_words)
+
+    st.markdown("# Análise morfológica")
+    if st.button("Analisar"):
+        for index, morph in enumerate(frase_morph):
+            st.markdown(f"### {tokens[index]}")
+            df = pd.DataFrame(morph, columns=["Categoria", "Tipo"])
+            st.table(df)

@@ -56,7 +56,7 @@ BK_COLOR_DICT = {
     "VERBO#PARTICÍPIO": "#6aa84f",
     "VERBO#GERÚNDIO": "#6aa84f",
     "ADJETIVO": "#0000ff",
-    "ARTIGO": "#5B850C",
+    "ARTIGO": "#ff9900",
     "PRONOME": "#b77a7a",
     "PRONOME#ADJETIVO": "#b77a7a",
     "PRONOME#SUBSTANTIVO": "#b77a7a",
