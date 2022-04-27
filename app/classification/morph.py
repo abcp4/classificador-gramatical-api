@@ -1,24 +1,39 @@
 
 substituicoes_morfologicas={
-    'Definite':'Artigo',
+    'Case': 'Caso',
+    'Voice': 'Voz',
+    'VerbForm': 'Forma Verbal',
+    'Definite':'Definitude',
     'Gender':'Gênero',
-    'Number':'Numeral',
+    'Number':'Número',
     'Mood':'Modo Verbal',
-    'PronType':'Tipo Pronome',
+    'PronType':'Tipo de Pronome',
     'Person':'Pessoa',
     'Tense':'Tempo Verbal',
-    'Polarity': 'Polaridade'
+    'Polarity': 'Polaridade',
+    'Degree': 'Grau',
+    'Foreign': 'Estrangeira',
+    'Reflex': 'Reflexivo',
+    'NumType': 'Tipo de Numeral',
 }
-substituicoes_morfologicas_subtipos={'Artigo':{'Def': 'definido','Ind': 'Indefinido'},
-                                     'Gênero':{'Fem':'Feminino','Masc':'Masculino'},
-                                     'Numeral':{'Sing':'Singular','Plur':'Plural'},
-                                     'Modo Verbal':{'Ind':'Indicativo','Sub':'Subjuntivo','Imp':'Imperativo'},
-                                     'Tipo Pronome':{'Prs':'Pessoal/Posessivo', 'Dem':'Demonstrativo', 'Neg':'Indefinido','Int':'Interrogativo',
-                                                     'Rel':'Relativo','Inf':'Infinitivo','Fin':'Finitivo','Art':'Artigo'},
+substituicoes_morfologicas_subtipos={'Caso': {'Nom': 'Nominativo', 'Acc': 'Acusativo', 'Dat': 'Dativo'},
+                                     'Voz': {'Pass': 'Passiva'},
+                                     'Forma Verbal': {'Fin': 'Finito', 'Ger': 'Gerúndio', 'Inf': 'Infinitivo', 'Part': 'Particípio'},
+                                     'Definitude':{'Def': 'Definido','Ind': 'Indefinido'},
+                                     'Gênero':{'Fem':'Feminino','Masc':'Masculino', 'Unsp': 'Não Especificado'},
+                                     'Número':{'Sing':'Singular','Plur':'Plural', 'Unsp': 'Não Especificado'},
+                                     'Modo Verbal':{'Ind':'Indicativo','Sub':'Subjuntivo','Imp':'Imperativo', 'Cnd': 'Condicional'},
+                                     'Tipo de Pronome':{'Prs':'Pessoal ou Possessivo', 'Dem':'Demonstrativo', 'Ind':'Indefinido','Int':'Interrogativo',
+                                                     'Rel':'Relativo','Art':'Artigo', 'Neg': 'Negativo', 'Emp': 'Enfático', 'Tot': 'Coletivo'},
                                      'Pessoa':{'1':'Primeira Pessoa','2':'Segunda Pessoa','3':'Terceira Pessoa'},
-                                     'Tempo Verbal':{'Past':'Pretérito Perfeito','Pres':'Presente','Pqp':'Pretérito mais-que-perfeito',
-                                                     'Imp':'Pretérito Imperfeito','Fut':'Futuro do Presente','Fin':'Futuro do Pretérito'},
-                                     "Polaridade":{'Neg':'Negativo'},
+                                     'Tempo Verbal':{'Past':'Pretérito Perfeito','Pres':'Presente','Pqp':'Pretérito Mais-que-perfeito',
+                                                     'Imp':'Pretérito Imperfeito','Fut':'Futuro do Presente'},
+                                     'Polaridade':{'Neg':'Negativa'},
+                                     'Grau': {'Cmp': 'Comparativo'},
+                                     'Estrangeira': {'Yes': 'Sim'},
+                                     'Reflexivo': {'Yes': 'Sim'},
+                                     'Tipo de Numeral': {'Card': 'Cardinal', 'Frac': 'Fração', 'Mult': 'Multiplicativo', 'Ord': 'Ordinal',
+                                                         'Range': 'Amplo', 'Sets': 'Conjunto'}
 
 }
 
@@ -45,3 +60,5 @@ def get_morph(frase_spacy_str):
       else:
           frase_morph.append([('--', '--')])
     return frase_morph
+
+print(get_morph("eu/PRONOME gosto/VERBO de/PRONOME quem/PRONOME vem/VERBO ./PONTUAÇÃO"))
