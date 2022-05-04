@@ -17,10 +17,10 @@ def a_classificacao(texto):
     # Coloca a primeira palavra em minúsculas
     # necessário para: briguei, dei, etc;
     # precisa corrigir: São, Clara, Santos, etc.
-    frase_low_1 = texto[0].lower() + texto[1:]
+    # frase_low_1 = texto[0].lower() + texto[1:]
 
     # Criação do doc, objeto do Spacy
-    doc = nlp(frase_low_1)
+    doc = nlp(texto)
 
     # Fornece as informações que vamos usar em forma de tuplas em lista
     frase_spacy = [(token.orth_, token.pos_, token.morph, token.dep_)
