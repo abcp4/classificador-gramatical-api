@@ -1,0 +1,76 @@
+English,EnglishTypes,Portugues,PortuguesTypes
+,,,
+ADJ,ADJ,ADJETIVO,ADJETIVO
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
+NumType,Ord,Tipo de Numeral,Ordinário
+Number,"Plur, Sing",Número,"Plural, Singular"
+,,,
+ADP,ADP,PREPOSIÇÃO,PREPOSIÇÃO
+,,,
+ADV,ADV,ADVÉRBIO,ADVÉRBIO
+Polarity,Neg,Polaridade,Negativa
+,,,
+AUX,AUX,AUXILIAR,AUXILIAR
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Não Especificado"
+Mood,"Cnd, Imp, Ind, Sub",Modo Verbal,"Condicional, Imperativo, Indicativo, Subjuntivo"
+Number,"Plur, Sing",Número,"Plural, Singular"
+Person,"1, 2, 3,",Pessoa,"Primeira, Segunda, Terceira"
+Tense,"Fut, Imp, Past, Pqp, Pres",Tempo Verbal,"Futuro, Pretérito Imperfeito, Pretérito Perfeito, Pretério Mais-que-Perfeito, Presente"
+VerbForm,"Fin, Ger, Inf, Part",Forma Verbal,"Finito, Gerúndio, Infinitivo, Particípio"
+,,,
+CCONJ,CCONJ,CONJUNÇÃO,CONJUNÇÃO
+,,,
+DET,DET,ARTIGO,ARTIGO
+Definite,"Def, Ind",Definitude do Artigo,"Definido, Indefinido"
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
+Number,"Plur, Sing, Unsp",Número,"Plural, Singular"
+PronType,"Art, Dem, Emp, Ind, Int, Neg, Prs, Rel, Tot",Tipo,"Artigo, Pronome Demonstrativo, Enfático, Indefinido, Interrogativo, Negativo, Pessoal ou Possessivo, Relativo, Coletivo"
+,,,
+INTJ,INTJ,INTERJEIÇÃO,INTERJEIÇÃO
+,,,
+NOUN,NOUN,SUBSTANTIVO,SUBSTANTIVO
+Foreign,Yes,Estrangeiro,Sim
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
+NumType,Ord,Tipo de Numeral,Ordinal
+Number,"Plur, Sing, Unsp",Número,"Plural, Singular, Não especificado"
+,,,
+NUM,NUM,NUMERAL,NUMERAL
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
+NumType,"Card, Frac, Mult, Ord, Range, Sets",Tipo de Numeral,"Cardinal, Fracional, Múltiplo, Ordinal, Intervalar, Conjunto"
+Number,"Plur, Sing",Número,"Plural, Singular"
+,,,
+PART,PART,PARTICÍPIO,PARTICÍPIO
+Gender,Masc,Gênero,Masculino
+Number,Sing,Número,Singular
+,,,
+PRON,PRON,PRONOME,PRONOME
+Case,"Acc, Dat, Nom",Caso,"Acusativo, Dativo, Reto"
+Definite,"Def, Ind",Definitude,"Definido, Indefinido"
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
+Number,"Plur, Sing, Unsp",Número,"Plural, Singular, Não especificado"
+Person,"1, 2, 3,",Pessoa,"Primeira, Segunda, Terceira"
+PronType,"Art, Dem, Ind, Int, Neg, Prs, Rel, Tot",Tipo,"Artigo, Pronome Demonstrativo, Indefinido, Interrogativo, Negativo, Pessoal ou Possessivo, Relativo, Coletivo"
+Reflex,Yes,Reflexivo,Sim
+VerbForm,Ger,Forma Verbal,Gerúndio
+,,,
+PROPN,PROPN,NOME PRÓPRIO,NOME PRÓPRIO
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
+Number,"Plur, Sing",Número,"Plural, Singular"
+,,,
+PUNCT,PUNCT,PONTUAÇÃO,PONTUAÇÃO
+,,,
+SCONJ,SCONJ,SCONJ,SCONJ
+Gender,"Fem, Masc",Gênero,"Feminino, Masculino, Neutro"
+Number,"Plur, Sing",Número,"Plural, Singular"
+PronType,"Ind, Rel",Tipo de Pronome,"Indefinido, Relativo"
+,,,
+SYM,SYM,SYM,SYM
+,,,
+VERB,VERB,VERBO,VERBO
+Gender,"Fem, Masc",Gênero,"Feminino, Masculino"
+Mood,"Cnd, Imp, Ind, Sub",Modo,"Condicional, Imperativo, Indicativo, Subjuntivo"
+Number,"Plur, Sing",Número,"Plural, Singular"
+Person,"1, 2, 3,",Pessoa,"Primeira, Segunda, Terceira"
+Tense,"Fut, Imp, Past, Pqp, Pres",Tempo,"Futuro, Pretérito Imperfeito, Pretérito Perfeito, Pretério Mais-que-Perfeito, Presente"
+VerbForm,"Fin, Ger, Inf, Part",Forma Verbal,"Finito, Gerúndio, Infinitivo, Particípio"
+Voice,Pass,Voz,Passiva
