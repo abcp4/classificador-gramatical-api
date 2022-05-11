@@ -1,6 +1,6 @@
 import pandas as pd
 
-df= pd.read_csv('morph.csv')
+df= pd.read_csv('morph_types.csv')
 
 substituicoes_morfologicas={}
 substituicoes_morfologicas_subtipos={}
