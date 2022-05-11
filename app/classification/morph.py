@@ -21,7 +21,7 @@ for i in range(len(df)):
         min_len=len(tipos_pt)
     else:
         min_len=len(tipos_en)
-    substituicoes_morfologicas_subtipos[pt]={tipos_en[j]:tipos_pt[j] for j in range(min_len)}
+    substituicoes_morfologicas_subtipos[pt]={tipos_en[j].strip():tipos_pt[j].strip() for j in range(min_len)}
 
 # substituicoes_morfologicas={
 #     'Case': 'Caso',
