@@ -85,4 +85,4 @@ def get_morph(frase_spacy_str):
           frase_morph.append([('--', '--')])
     return frase_morph
 
-print(get_morph("eu/PRONOME gosto/VERBO de/PRONOME quem/PRONOME vem/VERBO ./PONTUAÇÃO"))
+#print(get_morph("eu/PRONOME gosto/VERBO de/PRONOME quem/PRONOME vem/VERBO ./PONTUAÇÃO"))
