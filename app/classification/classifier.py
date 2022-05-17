@@ -28,6 +28,7 @@ def a_classificacao(texto):
 
     # Transforma as informações em string (texto)
     frase_spacy_str = ''.join(str(e[0] + '/' + e[1] + '/' + e[3] + ' ') for e in frase_spacy)
+    frase_spacy_d = ''.join(str(e[0] + '/' + e[1] + '/' + e[3] + ' ') for e in frase_spacy)
     print('frase spacy: ',frase_spacy_str)
 
     # Aplica as substituições
@@ -37,7 +38,7 @@ def a_classificacao(texto):
     
     # Processar informações morfologicas
     frase_spacy_str = ''.join(str(e[0] + '/' + str(e[2]) + ' ') for e in frase_spacy)
-    frase_morph=get_morph(frase_spacy_str)
+    frase_morph=get_morph(frase_spacy_str,frase_spacy_d)
 
     return frase_classgram,frase_morph
 
