@@ -22,20 +22,20 @@ CCONJ,CCONJ,CONJUNÇÃO,CONJUNÇÃO
 ,,,
 DET,DET,ARTIGO,ARTIGO
 Definite,"Def, Ind",Definitude do Artigo,"Definido, Indefinido"
-Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
-Number,"Plur, Sing, Unsp",Número,"Plural, Singular"
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Indefinido"
+Number,"Plur, Sing, Unsp",Número,"Plural, Singular, Indefinido"
 PronType,"Art, Dem, Emp, Ind, Int, Neg, Prs, Rel, Tot",Tipo,"Artigo, Pronome Demonstrativo, Enfático, Indefinido, Interrogativo, Negativo, Pessoal ou Possessivo, Relativo, Coletivo"
 ,,,
 INTJ,INTJ,INTERJEIÇÃO,INTERJEIÇÃO
 ,,,
 NOUN,NOUN,SUBSTANTIVO,SUBSTANTIVO
 Foreign,Yes,Estrangeiro,Sim
-Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Indefinido"
 NumType,Ord,Tipo de Numeral,Ordinal
-Number,"Plur, Sing, Unsp",Número,"Plural, Singular, Não especificado"
+Number,"Plur, Sing, Unsp",Número,"Plural, Singular, Indefinido"
 ,,,
 NUM,NUM,NUMERAL,NUMERAL
-Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Indefinido"
 NumType,"Card, Frac, Mult, Ord, Range, Sets",Tipo de Numeral,"Cardinal, Fracional, Múltiplo, Ordinal, Intervalar, Conjunto"
 Number,"Plur, Sing",Número,"Plural, Singular"
 ,,,
@@ -46,21 +46,21 @@ Number,Sing,Número,Singular
 PRON,PRON,PRONOME,PRONOME
 Case,"Acc, Dat, Nom",Caso,"Acusativo, Dativo, Reto"
 Definite,"Def, Ind",Definitude,"Definido, Indefinido"
-Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
-Number,"Plur, Sing, Unsp",Número,"Plural, Singular, Não especificado"
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Indefinido"
+Number,"Plur, Sing, Unsp",Número,"Plural, Singular, Indefinido"
 Person,"1, 2, 3,",Pessoa,"Primeira, Segunda, Terceira"
 PronType,"Art, Dem, Ind, Int, Neg, Prs, Rel, Tot",Tipo,"Artigo, Pronome Demonstrativo, Indefinido, Interrogativo, Negativo, Pessoal ou Possessivo, Relativo, Coletivo"
 Reflex,Yes,Reflexivo,Sim
 VerbForm,Ger,Forma Verbal,Gerúndio
 ,,,
 PROPN,PROPN,NOME PRÓPRIO,NOME PRÓPRIO
-Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Neutro"
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Indefinido"
 Number,"Plur, Sing",Número,"Plural, Singular"
 ,,,
 PUNCT,PUNCT,PONTUAÇÃO,PONTUAÇÃO
 ,,,
 SCONJ,SCONJ,SCONJ,SCONJ
-Gender,"Fem, Masc",Gênero,"Feminino, Masculino, Neutro"
+Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Indefinido"
 Number,"Plur, Sing",Número,"Plural, Singular"
 PronType,"Ind, Rel",Tipo de Pronome,"Indefinido, Relativo"
 ,,,
