@@ -50,16 +50,19 @@ print('substituicoes_morfologicas_subtipos: ',substituicoes_morfologicas_subtipo
 def get_morph(frase_spacy_str,frase_spacy_d):
     frase_morph=[]
     print('frase_spacy_d: ',frase_spacy_d)
-    c_type = frase_spacy_d.split('/')[1]
-    sms=substituicoes_morfologicas_subtipos[c_type]
-    sm=substituicoes_morfologicas[c_type]
-    print('sms: ',sms)
-    print('sm: ',sm)
-    
+    word_classes=frase_spacy_d.split(' ')
     frase_spacy_str=frase_spacy_str.strip()
-
+    c=0
     for sent in frase_spacy_str.split(' '):
       print('sent: ',sent)
+      c_type = word_classes[c].split('/')[1]
+      c+=1
+      sms=substituicoes_morfologicas_subtipos[c_type]
+      sm=substituicoes_morfologicas[c_type]
+      print('sms: ',sms)
+      print('sm: ',sm)
+    
+      
       word,word_morph = sent.split('/')
       if len(word_morph)>1:
         terms =word_morph.split('|')
