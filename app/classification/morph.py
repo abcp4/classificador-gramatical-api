@@ -1,6 +1,8 @@
 import pandas as pd
 
 df= pd.read_csv('app/classification/morph_types.csv')
+df_excepcionais= pd.read_csv('app/classification/morph_excepcionais.csv')
+
 
 substituicoes_morfologicas={}
 substituicoes_morfologicas_subtipos={}
@@ -46,7 +48,6 @@ for i in range(len(df)):
 print('substituicoes_morfologicas: ',substituicoes_morfologicas)
 print('substituicoes_morfologicas_subtipos: ',substituicoes_morfologicas_subtipos)
 
-
 def get_morph(frase_spacy_str,frase_spacy_d):
     frase_morph=[]
     print('frase_spacy_d: ',frase_spacy_d)
@@ -75,6 +76,21 @@ def get_morph(frase_spacy_str,frase_spacy_d):
             t2=''
             if len(sub_terms)>1:
               if sub_terms[0] in sm:
+
+                  #Casos excepcionais
+                  #pega caso 
+                  m=df_excepcionais[(df_excepcionais['String']==word) & (df_excepcionais['Condicao']==term)]
+                  print(m)
+                  if len(m)>0:
+                      m=m['Atribuir'].iloc[0].split('=')
+                      new_terms.append((m[0],m[1]))
+                      # if word in df_excepcionais['String']:
+                      #   if term in df_excepcionais['Condição']:
+                      #       new_terms.append((t1,t2))
+                      continue
+
+
+
                   t1 = sm[sub_terms[0]]
                   if sub_terms[1] in sms:
                     t2 = sms[sub_terms[1]]
@@ -83,6 +99,7 @@ def get_morph(frase_spacy_str,frase_spacy_d):
           frase_morph.append(new_terms)
       else:
           frase_morph.append([('--', '--')])
+
     return frase_morph
 
 #print(get_morph("eu/PRONOME gosto/VERBO de/PRONOME quem/PRONOME vem/VERBO ./PONTUAÇÃO"))
