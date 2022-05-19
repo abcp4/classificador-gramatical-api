@@ -28,7 +28,7 @@ def a_classificacao(texto):
 
     # Transforma as informações em string (texto)
     frase_spacy_str = ''.join(str(e[0] + '/' + e[1] + '/' + e[3] + ' ') for e in frase_spacy)
-    frase_spacy_d = ''.join(str(e[0] + '/' + e[1] + '/' + e[3] + ' ') for e in frase_spacy)
+    
     print('frase spacy: ',frase_spacy_str)
 
     # Aplica as substituições
@@ -36,8 +36,14 @@ def a_classificacao(texto):
         frase_spacy_str = re.sub(v[0], v[1], frase_spacy_str)
     frase_classgram = re.sub(r'(?i)((\b\w+|[,.;?!])/\w+\b)/\w+', r'\1', frase_spacy_str)
     
+
     # Processar informações morfologicas
-    frase_spacy_str = ''.join(str(e[0] + '/' + str(e[2]) + ' ') for e in frase_spacy)
+    #provisorio: duas chamadas no modelo, essa com lower pq uppercase ta atrapalhando na previsao
+    doc = nlp(texto.lower())
+    frase_spacy = [(token.orth_, token.pos_, token.morph, token.dep_)
+                         for token in doc]
+    frase_spacy_d = ''.join(str(e[0].lower() + '/' + e[1] + '/' + e[3] + ' ') for e in frase_spacy)
+    frase_spacy_str = ''.join(str(e[0].lower() + '/' + str(e[2]) + ' ') for e in frase_spacy)
     frase_morph=get_morph(frase_spacy_str,frase_spacy_d)
 
     return frase_classgram,frase_morph
@@ -49,6 +55,7 @@ def get_classification(text, tag_text='Spacy'):
     annotated_text,frase_morph = a_classificacao(text)
     if annotated_text:
         print('annotated words: ',annotated_text)
+        print('morph: ',frase_morph)
         annotated_words = annotated_text.strip().split(" ")
         tagged_words = []
         tokens = []
