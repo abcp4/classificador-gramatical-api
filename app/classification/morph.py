@@ -98,7 +98,7 @@ def get_morph(frase_spacy_str,frase_spacy_d):
               
           frase_morph.append(new_terms)
       else:
-          frase_morph.append([('--', '--')])
+          frase_morph.append([('Essa palavra não tem detalhamento morfológico', '.')])
 
     return frase_morph
 
