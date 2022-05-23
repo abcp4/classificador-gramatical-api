@@ -79,7 +79,7 @@ def get_morph(frase_spacy_str,frase_spacy_d):
 
                   #Casos excepcionais
                   #pega caso 
-                  m=df_excepcionais[(df_excepcionais['String']==word) & (df_excepcionais['Condicao']==term)]
+                  m=df_excepcionais[(df_excepcionais['String']==word) & (df_excepcionais['CondicaoSub']==term)]
                   print(m)
                   if len(m)>0:
                       m=m['Atribuir'].iloc[0].split('=')
