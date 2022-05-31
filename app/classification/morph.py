@@ -57,12 +57,12 @@ def get_morph(frase_spacy_str,frase_spacy_d):
     for sent in frase_spacy_str.split(' '):
       print('sent: ',sent)
       c_type = word_classes[c].split('/')[1]
+      print('c_type: ',c_type)
       c+=1
       sms=substituicoes_morfologicas_subtipos[c_type]
       sm=substituicoes_morfologicas[c_type]
       print('sms: ',sms)
       print('sm: ',sm)
-    
       
       word,word_morph = sent.split('/')
       if len(word_morph)>1:
@@ -78,7 +78,16 @@ def get_morph(frase_spacy_str,frase_spacy_d):
               if sub_terms[0] in sm:
 
                   #Casos excepcionais
-                  #pega caso 
+                  #caso ocultar
+                  if c_type =='PRON' or c_type== 'DET':
+                    if sub_terms[0]  == 'Gender':
+                      #otimizar, usando dicionario o(1) ao inves de buscas no pandas
+                      m=df_excepcionais[(df_excepcionais['String']==word) & (df_excepcionais['CondicaoSub']=='Gender')]
+                      print('m: ',m)
+                      if len(m)>0:
+                        continue
+                  
+                  #caso atribuir
                   m=df_excepcionais[(df_excepcionais['String']==word) & (df_excepcionais['CondicaoSub']==term)]
                   print(m)
                   if len(m)>0:
@@ -88,7 +97,6 @@ def get_morph(frase_spacy_str,frase_spacy_d):
                       #   if term in df_excepcionais['Condição']:
                       #       new_terms.append((t1,t2))
                       continue
-
 
 
                   t1 = sm[sub_terms[0]]
