@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 
 df= pd.read_csv('app/classification/morph_types.csv')
 df_excepcionais= pd.read_csv('app/classification/morph_excepcionais.csv')
@@ -65,6 +66,13 @@ def get_morph(frase_spacy_str,frase_spacy_d):
       print('sm: ',sm)
       
       word,word_morph = sent.split('/')
+      #caso transformar
+      if c_type =='VERB' or c_type== 'AUX': 
+          r_trans = re.search(r'(\b\w+[aei](ria[sm]?\b|rí(eis|amos)\b))',word)
+          #adicionar Model verbal como futuro do preterito. Ela geralmente n vem, entao colocar o tense com FutPre
+          word_morph+='|Tense=FutPre'
+
+
       if len(word_morph)>1:
         terms =word_morph.split('|')
         new_terms=[]
@@ -87,6 +95,16 @@ def get_morph(frase_spacy_str,frase_spacy_d):
                       if len(m)>0:
                         continue
                   
+                  #caso transformar
+                  if c_type =='VERB' or c_type== 'AUX': 
+                    if r_trans!=None:
+                      print('Transformar: ',  word)
+                      if sub_terms[0]=='Mood':
+                        sub_terms[1]='Ind'
+                        
+
+
+
                   #caso atribuir
                   m=df_excepcionais[(df_excepcionais['String']==word) & (df_excepcionais['CondicaoSub']==term)]
                   print(m)
