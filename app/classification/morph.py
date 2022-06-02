@@ -70,7 +70,9 @@ def get_morph(frase_spacy_str,frase_spacy_d):
       if c_type =='VERB' or c_type== 'AUX': 
           r_trans = re.search(r'(\b\w+[aei](ria[sm]?\b|rí(eis|amos)\b))',word)
           #adicionar Model verbal como futuro do preterito. Ela geralmente n vem, entao colocar o tense com FutPre
-          word_morph+='|Tense=FutPre'
+          if r_trans!=None: 
+            #adicionar Model verbal como futuro do preterito. Ela geralmente n vem, entao colocar o tense com FutPre
+            word_morph+='|Tense=FutPre'
 
 
       if len(word_morph)>1:
