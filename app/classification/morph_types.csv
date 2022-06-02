@@ -19,7 +19,7 @@ Gender,"Fem, Masc, Unsp",Gênero,"Feminino, Masculino, Não Especificado"
 Mood,"Cnd, Imp, Ind, Sub",Modo Verbal,"Condicional, Imperativo, Indicativo, Subjuntivo"
 Number,"Plur, Sing",Número,"Plural, Singular"
 Person,"1, 2, 3,",Pessoa,"Primeira, Segunda, Terceira"
-Tense,"Fut, Imp, Past, Pqp, Pres",Tempo Verbal,"Futuro, Pretérito Imperfeito, Pretérito Perfeito, Pretério Mais-que-Perfeito, Presente"
+Tense,"Fut, Imp, Past, Pqp, Pres, FutPre",Tempo Verbal,"Futuro, Pretérito Imperfeito, Pretérito Perfeito, Pretério Mais-que-Perfeito, Presente, Futuro do Pretérito"
 VerbForm,"Fin, Ger, Inf, Part",Forma Verbal,"Finito, Gerúndio, Infinitivo, Particípio"
 ,,,
 CCONJ,CCONJ,CONJUNÇÃO,CONJUNÇÃO
@@ -75,6 +75,6 @@ Gender,"Fem, Masc",Gênero,"Feminino, Masculino"
 Mood,"Cnd, Imp, Ind, Sub",Modo,"Condicional, Imperativo, Indicativo, Subjuntivo"
 Number,"Plur, Sing",Número,"Plural, Singular"
 Person,"1, 2, 3,",Pessoa,"Primeira, Segunda, Terceira"
-Tense,"Fut, Imp, Past, Pqp, Pres",Tempo,"Futuro, Pretérito Imperfeito, Pretérito Perfeito, Pretério Mais-que-Perfeito, Presente"
+Tense,"Fut, Imp, Past, Pqp, Pres, FutPre",Tempo,"Futuro, Pretérito Imperfeito, Pretérito Perfeito, Pretério Mais-que-Perfeito, Presente, Futuro do Pretérito"
 VerbForm,"Fin, Ger, Inf, Part",Forma Verbal,"Finito, Gerúndio, Infinitivo, Particípio"
 Voice,Pass,Voz,Passiva
