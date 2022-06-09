@@ -159,12 +159,12 @@ substituicoes = {
     # Transformando as etiquetas de UD nas da gramática tradicional
     # Tem que vir no final se não as regras det_pronomes, participio_adjetivo não funcionam
     'det_artigo': (r'DET\b', r'ARTIGO'),
-    'noun_substantivo': (r'NOUN\b', r'SUBSTANTIVO'),
+    'noun_substantivo': (r'NOUN\b\S*', r'SUBSTANTIVO'),
     'propn_nome_proprio': (r'PROPN\b\S*', r'NOME#PRÓPRIO'), # acréscimo de \S*
     'verb_verbo': (r'VERB\b', r'VERBO'),
     'adj_adjetivo': (r'ADJ\b', r'ADJETIVO'),
     'adv_advérbio': (r'ADV\b', r'ADVÉRBIO'),
-    'num_numeral': (r'NUM\b', r'NUMERAL'),
+    'num_numeral': (r'NUM\b\S*', r'NUMERAL'),
     'pron_pronome': (r'PRON\b', r'PRONOME'),
     'adp_preposição': (r'ADP\b', r'PREPOSIÇÃO'),
     'scconj_conjunção': (r'[CS]CONJ\b', r'CONJUNÇÃO'),
