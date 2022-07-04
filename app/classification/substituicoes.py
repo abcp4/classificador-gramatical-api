@@ -155,6 +155,9 @@ substituicoes = {
     # Forçando verbo a ser substantivo ("a fala")
     'verbo_subst': (r'(?i)(\b\w+\b/ARTIGO\S*\s)(\b\w+\b/)VERB\S*', r'\1\2SUBSTANTIVO'),
     
+    # Forçando 'a' a ser pronome e 'x-mos' a ser verbo ("Nós a vendemos")
+    'a_mos': (r'(?i)(\ba\b/)\S*(\s\b\w+mos\b/)\S*', r'\1PRONOME\2VERBO'),
+    
 
     # Transformando as etiquetas de UD nas da gramática tradicional
     # Tem que vir no final se não as regras det_pronomes, participio_adjetivo não funcionam
