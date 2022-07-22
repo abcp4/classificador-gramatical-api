@@ -174,6 +174,6 @@ substituicoes = {
     'intj_interjeição': (r'INTJ\b', r'INTERJEIÇÃO'),
     'aux_auxiliar': (r'AUX\b', r'AUXILIAR'),
     'sym_simb': (r'SYM\b', r'SIMB'),
-    'punct_pontuação': (r'PUNCT\b', r'PONTUAÇÃO'),
+    'punct_pontuação': (r'PUNCT\b\S*', r'PONTUAÇÃO'),
     'X_outros': (r'/X\b', r'/OUTROS'),
           }
