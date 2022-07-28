@@ -161,19 +161,19 @@ substituicoes = {
 
     # Transformando as etiquetas de UD nas da gramática tradicional
     # Tem que vir no final se não as regras det_pronomes, participio_adjetivo não funcionam
-    'det_artigo': (r'DET\b', r'ARTIGO'),
+    'det_artigo': (r'DET\b\S*', r'ARTIGO'),
     'noun_substantivo': (r'NOUN\b\S*', r'SUBSTANTIVO'),
     'propn_nome_proprio': (r'PROPN\b\S*', r'NOME#PRÓPRIO'), # acréscimo de \S*
-    'verb_verbo': (r'VERB\b', r'VERBO'),
-    'adj_adjetivo': (r'ADJ\b', r'ADJETIVO'),
-    'adv_advérbio': (r'ADV\b', r'ADVÉRBIO'),
+    'verb_verbo': (r'VERB\b\S*', r'VERBO'),
+    'adj_adjetivo': (r'ADJ\b\S*', r'ADJETIVO'),
+    'adv_advérbio': (r'ADV\b\S*', r'ADVÉRBIO'),
     'num_numeral': (r'NUM\b\S*', r'NUMERAL'),
-    'pron_pronome': (r'PRON\b', r'PRONOME'),
-    'adp_preposição': (r'ADP\b', r'PREPOSIÇÃO'),
-    'scconj_conjunção': (r'[CS]CONJ\b', r'CONJUNÇÃO'),
-    'intj_interjeição': (r'INTJ\b', r'INTERJEIÇÃO'),
-    'aux_auxiliar': (r'AUX\b', r'AUXILIAR'),
-    'sym_simb': (r'SYM\b', r'SIMB'),
+    'pron_pronome': (r'PRON\b\S*', r'PRONOME'),
+    'adp_preposição': (r'ADP\b\S*', r'PREPOSIÇÃO'),
+    'scconj_conjunção': (r'[CS]CONJ\b\S*', r'CONJUNÇÃO'),
+    'intj_interjeição': (r'INTJ\b\S*', r'INTERJEIÇÃO'),
+    'aux_auxiliar': (r'AUX\b\S*', r'AUXILIAR'),
+    'sym_simb': (r'SYM\b\S*', r'SIMB'),
     'punct_pontuação': (r'PUNCT\b\S*', r'PONTUAÇÃO'),
-    'X_outros': (r'/X\b', r'/OUTROS'),
+    'X_outros': (r'/X\b\S*', r'/OUTROS'),
           }
