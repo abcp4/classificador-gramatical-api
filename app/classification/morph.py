@@ -49,6 +49,13 @@ for i in range(len(df)):
 print('substituicoes_morfologicas: ',substituicoes_morfologicas)
 print('substituicoes_morfologicas_subtipos: ',substituicoes_morfologicas_subtipos)
 
+def tratar(sent):
+  word,  word_morph = sent.split('/')
+  if word.lower() in ["voce", "você"]:
+    word_morph = word_morph.replace("Person=3", "Person=2")
+  return word, word_morph
+
+
 def get_morph(frase_spacy_str,frase_spacy_d):
     frase_morph=[]
     print('frase_spacy_d: ',frase_spacy_d)
@@ -65,7 +72,7 @@ def get_morph(frase_spacy_str,frase_spacy_d):
       print('sms: ',sms)
       print('sm: ',sm)
       
-      word,word_morph = sent.split('/')
+      word,word_morph = tratar(sent)
       #caso transformar
       if c_type =='VERB' or c_type== 'AUX': 
           r_trans = re.search(r'(\b\w+[aei](ria[sm]?\b|rí(eis|amos)\b))',word)
@@ -125,8 +132,10 @@ def get_morph(frase_spacy_str,frase_spacy_d):
             new_terms.append((t1,t2))
               
           frase_morph.append(new_terms)
+      elif c_type == "PUNCT":
+        frase_morph.append([('Sinal de pontuação', '')])
       else:
-          frase_morph.append([('Essa palavra não tem detalhamento morfológico', '.')])
+          frase_morph.append([('Essa palavra não tem detalhamento morfológico.', '')])
 
     return frase_morph
 

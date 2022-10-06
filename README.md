@@ -14,6 +14,6 @@ Classificador gramatical para fins acadêmicos.
     ```
 3. Em seguida execute o projeto com o streamlit
     ```shell
-    streamlit run app/main.py
+    uvicorn app.main:app --reload
     ```
 4. Pronto! A aplicação vai ficar disponível no endereço exibido no terminal, clique nele e experimente a aplicação.
