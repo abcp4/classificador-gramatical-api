@@ -58,6 +58,7 @@ def tratar(sent):
 
 def get_morph(frase_spacy_str,frase_spacy_d):
     frase_morph=[]
+    print('frase_spacy_str: ',frase_spacy_str)
     print('frase_spacy_d: ',frase_spacy_d)
     word_classes=frase_spacy_d.split(' ')
     frase_spacy_str=frase_spacy_str.strip()
