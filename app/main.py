@@ -8,18 +8,18 @@ app = FastAPI()
 @app.get("/get_classification")
 def classification(text: str):
 #     try:
-#         tagged_words, frase_morph, tokens = get_classification(text)
-#         return {
-#             "tagged_words": tagged_words,
-#             "frase_morph": frase_morph,
-#             "tokens": tokens
-#         }
-#     except:
+    tagged_words, frase_morph, tokens = get_classification(text)
     return {
-        "tagged_words": [],
-        "frase_morph": [],
-        "tokens": []
+        "tagged_words": tagged_words,
+        "frase_morph": frase_morph,
+        "tokens": tokens
     }
+#     except:
+#     return {
+#         "tagged_words": [],
+#         "frase_morph": [],
+#         "tokens": []
+#     }
 
 @app.get("/get_tip")
 def tips():
