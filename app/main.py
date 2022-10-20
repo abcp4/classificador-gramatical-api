@@ -14,7 +14,7 @@ def classification(text: str):
             "frase_morph": frase_morph,
             "tokens": tokens
         }
-     except:
+    except:
         d={
               "tagged_words": [
                 [
