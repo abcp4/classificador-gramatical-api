@@ -24,7 +24,7 @@ def classification(text: str):
             "frase_morph": frase_morph,
             "tokens": tokens
         }
-    except as e:
+    except Exception as e:
         o.write('ERROR: ',str(e)+'\n')
         d={
               "tagged_words": [
