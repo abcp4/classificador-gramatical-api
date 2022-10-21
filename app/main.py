@@ -17,7 +17,7 @@ def classification(text: str):
     o.write(text+'\n')
     try:
         tagged_words, frase_morph, tokens = get_classification(text)
-        o.write('class: ',str(tagged_words)+'\n')
+        o.write('class: '+str(tagged_words)+'\n')
         o.close()
         return {
             "tagged_words": tagged_words,
@@ -25,7 +25,7 @@ def classification(text: str):
             "tokens": tokens
         }
     except Exception as e:
-        o.write('ERROR: ',str(e)+'\n')
+        o.write('ERROR: '+str(e)+'\n')
         d={
               "tagged_words": [
                 [
