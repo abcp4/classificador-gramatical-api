@@ -9,23 +9,23 @@ app = FastAPI()
 
 @app.get("/get_classification")
 def classification(text: str):
-    date_str = str(datetime.date.today())
-    try:
-        o=open('/home/ubuntu/logs_classificador/'+date_str+'.txt','r')
-    except FileNotFoundError:
-        o=open('/home/ubuntu/logs_classificador/'+date_str+'.txt','w')
-    o.write(str(text)+'\n')
+    #date_str = str(datetime.date.today())
+    #try:
+    #    o=open('/home/ubuntu/logs_classificador/'+date_str+'.txt','r')
+    #except FileNotFoundError:
+    #    o=open('/home/ubuntu/logs_classificador/'+date_str+'.txt','w')
+    #o.write(str(text)+'\n')
     try:
         tagged_words, frase_morph, tokens = get_classification(text)
-        o.write('class: '+str(tagged_words)+'\n')
-        o.close()
+        #o.write('class: '+str(tagged_words)+'\n')
+        #o.close()
         return {
             "tagged_words": tagged_words,
             "frase_morph": frase_morph,
             "tokens": tokens
         }
     except Exception as e:
-        o.write('ERROR: '+str(e)+'\n')
+        #o.write('ERROR: '+str(e)+'\n')
         d={
               "tagged_words": [
                 [
@@ -44,7 +44,7 @@ def classification(text: str):
                 "erro"
               ]
             }
-        o.close()
+        #o.close()
         return d
 
 @app.get("/get_tip")
