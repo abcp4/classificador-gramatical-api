@@ -14,7 +14,7 @@ def classification(text: str):
         o=open('/home/ubuntu/logs_classificador/'+date_str+'.txt','r')
     except FileNotFoundError:
         o=open('/home/ubuntu/logs_classificador/'+date_str+'.txt','w')
-    o.write(text+'\n')
+    o.write(str(text)+'\n')
     try:
         tagged_words, frase_morph, tokens = get_classification(text)
         o.write('class: '+str(tagged_words)+'\n')
