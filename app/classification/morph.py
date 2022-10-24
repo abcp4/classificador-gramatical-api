@@ -84,6 +84,17 @@ def get_morph(frase_spacy_str,frase_spacy_d):
 
 
       if len(word_morph)>1:
+        
+        #Caso especial:  não/Polarity=Neg
+        #sms:  {'Neg': 'Negativa'}
+        #sm:  {'Polarity': 'Polaridade'}
+        #Nao vamos ter o simbolo |
+        if '|' not in word_morph:
+          if c_type =='ADV':
+            #Caso não. Ex: polaridade negativa
+            frase_morph.append([(sm[list(sm.keys())[0]],sms[list(sms.keys())[0]])])
+            continue
+            
         terms =word_morph.split('|')
         new_terms=[]
 
