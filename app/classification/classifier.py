@@ -73,10 +73,10 @@ def get_classification(text, tag_text='Spacy'):
             tagged_words.append(" ")
             frase_morph2.append(frase_morph[index])
             if "#" in tag:
-                nome_classificao, _ = frase_morph[-1]
+                #nome_classificao, _ = frase_morph[-1]
                 tipo = tag.title().replace("#", "+")
-                if nome_classificao == "Tipo":
-                    frase_morph2[index][-1] = ("Tipo", tipo)
-                else:
-                    frase_morph2[index].append(("Tipo", tipo))
+                #if nome_classificao == "Tipo":
+                #    frase_morph2[index][-1] = ("Tipo", tipo)
+                #else:
+                frase_morph2[index].append(("Tipo", tipo))
         return tagged_words, frase_morph2, tokens 
