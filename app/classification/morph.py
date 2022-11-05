@@ -81,6 +81,9 @@ def get_morph(frase_spacy_str,frase_spacy_d):
           if r_trans!=None: 
             #adicionar Model verbal como futuro do preterito. Ela geralmente n vem, entao colocar o tense com FutPre
             word_morph+='|Tense=FutPre'
+          else:
+            word_morph+='| '
+            
 
 
       if len(word_morph)>1:
