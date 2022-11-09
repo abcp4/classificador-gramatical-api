@@ -1,4 +1,4 @@
-from app.classification.classifier import get_classification
+from app.classification.classifier_sem_morph import get_classification
 from app.tips import get_tip
 from fastapi import FastAPI
 import datetime
@@ -16,12 +16,12 @@ def classification(text: str):
        o=open('/home/ubuntu/logs_classificador/'+date_str+'.txt','w')
     o.write(str(text)+'\n')
     try:
-        tagged_words, frase_morph, tokens = get_classification(text)
+        tagged_words, tokens = get_classification(text)
         o.write('class: '+str(tagged_words)+'\n')
         o.close()
         return {
             "tagged_words": tagged_words,
-            # "frase_morph": frase_morph,
+            "frase_morph": [],
             "tokens": tokens
         }
     except Exception as e:
