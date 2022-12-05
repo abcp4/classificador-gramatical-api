@@ -6,7 +6,7 @@ from .constants import tag_redirect
 from .substituicoes import substituicoes
 # from .morph import get_morph
 
-from .multiple_classification import predict
+#from .multiple_classification import predict
 
 tags={"Bosque":0,"GSD":1, "Linguateca":2, "Macmorpho":3}
 def a_classificacao(texto):
