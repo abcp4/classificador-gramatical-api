@@ -8,7 +8,7 @@ app = FastAPI()
 
 
 @app.get("/get_classification")
-def classification(text: str):
+def async classification(text: str):
     date_str = str(datetime.date.today())
     try:
        o=open('/home/ubuntu/logs_classificador/'+date_str+'.txt','a')
@@ -49,7 +49,7 @@ def classification(text: str):
         return d
 
 @app.get("/get_tip")
-def tips():
+def async tips():
     return {
         "tip": get_tip()
     }
