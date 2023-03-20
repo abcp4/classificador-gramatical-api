@@ -2,7 +2,7 @@ import re
 
 substituicoes = {
     # 'o, a, os, as' (exceto pronomes) e 'um, uma, uns, umas' como Artigos
-    'det_artigos': (r'(?i)(\b([oa]|u((ma?)|n))s?/)[^P]\w+\b', r'\1ARTIGO'),
+    'det_artigos': (r'(?i)(\b([oa]|u((ma?)|n))s?/)[^SAP]\w+\b', r'\1ARTIGO'),
     # Pronomes (e outros?) classificados como DET passam para Pronomes
     'det_pronomes': (r'(?i)(\b\w{3,}/)DET\b', r'\1PRONOME'),
     # 'tu' e 'te' como Pronomes
@@ -22,7 +22,7 @@ substituicoes = {
     # Contração de 'de' e 'aí, ali, aqui' como Preposição+ Advérbio
     'de_adv': (r'(?i)(\bd(aqui|aí|ali)/)\S+\b', r'\1PREPOSIÇÃO#ADVÉRBIO'),
     # Situações de ênclise como Verbo+Pronome
-    'enclise': (r'(?i)(\w+-([mts]e|lhes?|[lnv][oa]s?)/)\S+\b', r'\1VERBO#PRONOME'),
+    'enclise': (r'(?i)(\w+-([mts]e|lhes?|[lnv]?[oa]s?)/)\S+\b', r'\1VERBO#PRONOME'),
     # Situações de mesóclise como Verbo+Pronome+Desinência
     'mesoclise': (r'(?i)(\w+-([mts]e|lhes?|[lnv][oa]s?)(-\w+)/)\S+\b', r'\1VERBO#PRONOME#DESINENCIA'),
     # Forçando 'aquele' e variações classificados como Adjetivos para Pronomes
@@ -59,7 +59,7 @@ substituicoes = {
     # Mudando Verbo-do e variações (Particípio) para Adjetivo
     'participio_adjetivo': (r'(?i)(\b\w+[^n\s]d[oa]s?/)VERB\b', r'\1ADJETIVO'),
     # Muda verbo-adjetivo para verbo-advérbio (errou feio)
-    'v_adj': (r'(?i)(\b\w+/VERB\s\w+/)ADJ', r'\1ADVÉRBIO'),
+    'v_adj': (r'(?i)(\b\w+/VERB\S*\s\w+/)ADJ\S*', r'\1ADVÉRBIO'),
 
     'somos_refens': (r'(?i)(\bsomos\b/)\S+(\s\breféns\b/)\S+', r'\1VERBO\2ADJETIVO'),
     'e_breve': (r'(?i)(\bé\b/)\S+(\s\bbreve\b/)\S+', r'\1VERBO\2ADJETIVO'),
@@ -135,7 +135,7 @@ substituicoes = {
     'quando_onde':(r'(\b(Quando|Onde)\b/)\S+', r'\1PRONOME'),
 
     # Forçando classificação errada de substantivos como verbos
-    'casa_etc': (r'(?i)(\b(casa|abraço|morro|debate|canto)\b/)NOUN/ROOT',
+    'casa_etc': (r'(?i)(\b(casa|abraço|morro|debate|canto)\b/)NOUN/(ROOT|[an]mod)',
                  r'\1VERBO'),
     # Forçando classificação de verbos de 1a pessoa
     'eu_como_etc': (r'(?i)(\beu\b\S+\s)(\b(com|abraç|acord|caminh|viv|morr|cant|precis)o\b/)\S+',
@@ -157,6 +157,10 @@ substituicoes = {
     
     # Forçando 'a' a ser pronome e 'x-mos' a ser verbo ("Nós a vendemos")
     'a_mos': (r'(?i)(\ba\b/)\S*(\s\b\w+mos\b/)\S*', r'\1PRONOME\2VERBO'),
+    
+    # Mudando "a falar" a = SCONJ para a = preposição
+    'a_sconj_prep': (r'(?i)(\ba/)SCONJ\S*', r'\1PREPOSIÇÃO'),
+
     
 
     # Transformando as etiquetas de UD nas da gramática tradicional
