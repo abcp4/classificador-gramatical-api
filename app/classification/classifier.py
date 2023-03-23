@@ -12,7 +12,7 @@ tags={"Bosque":0,"GSD":1, "Linguateca":2, "Macmorpho":3}
 def a_classificacao(texto):
 
     # Carrega o modelo em português
-    nlp = spacy.load("pt_core_news_lg")
+    nlp = spacy.load("pt_core_news_md")
 
     # Coloca a primeira palavra em minúsculas
     # necessário para: briguei, dei, etc;
